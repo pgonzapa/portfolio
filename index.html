@@ -88,6 +88,25 @@
     max-width:22ch;
   }
 
+  .lang-switch{
+    margin-top:1.2rem;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+  }
+  .lang-switch a{
+    text-decoration:none;
+    color:#83a297;
+  }
+  .lang-switch a.active{
+    color:var(--ochre);
+    font-weight:500;
+  }
+  .lang-switch a:hover{color:var(--ochre);}
+  .lang-switch span{color:#4f635b;}
+
   .sidebar nav{
     margin-top:2.4rem;
     display:flex;
@@ -381,8 +400,9 @@
   .award .mark{
     font-family:'Fraunces', serif;
     color:var(--ochre);
-    font-size:1.3rem;
-    line-height:1.2;
+    font-size:1.6rem;
+    line-height:1;
+    padding-top:.15rem;
   }
   .award h3{font-size:1rem; font-family:'IBM Plex Sans',sans-serif; font-weight:600;}
   .award p{margin:.2rem 0 0; font-size:.88rem; color:var(--ink-soft);}
@@ -472,6 +492,12 @@
       <div class="kicker">Research portfolio</div>
       <h1>Patricia<br>González Palacios</h1>
       <p class="role">PhD candidate, Nutrition &amp; Food Science<br>University of Granada</p>
+
+      <div class="lang-switch">
+        <a href="index.html" class="active">EN</a>
+        <span>·</span>
+        <a href="index-es.html">ES</a>
+      </div>
 
       <nav id="side-nav">
         <a href="#overview">Overview</a>
@@ -760,35 +786,35 @@
         <div class="section-head"><h2>Recognition</h2></div>
 
         <div class="award">
-          <div class="mark">＋</div>
+          <div class="mark">•</div>
           <div>
             <h3>Abbott Award, Best Final Degree Project</h3>
             <p>Faculty of Pharmacy, University of Granada — 2021</p>
           </div>
         </div>
         <div class="award">
-          <div class="mark">＋</div>
+          <div class="mark">•</div>
           <div>
             <h3>Best academic record of the graduating class</h3>
             <p>BSc Human Nutrition and Dietetics, University of Granada — 2021</p>
           </div>
         </div>
         <div class="award">
-          <div class="mark">＋</div>
+          <div class="mark">•</div>
           <div>
             <h3>International Mobility Excellence Award</h3>
             <p>Best academic record during Erasmus+ research stay, Naples — 2020</p>
           </div>
         </div>
         <div class="award">
-          <div class="mark">＋</div>
+          <div class="mark">•</div>
           <div>
             <h3>Best poster, 66th AEPNYA Congress</h3>
             <p>Spanish Association of Child &amp; Adolescent Psychiatry — 2023</p>
           </div>
         </div>
         <div class="award">
-          <div class="mark">＋</div>
+          <div class="mark">•</div>
           <div>
             <h3>Best communication, XXV International Conference on Practical Nutrition</h3>
             <p>Sociedad Española de Dietética y Ciencias de la Alimentación — 2021</p>
