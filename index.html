@@ -397,6 +397,23 @@
     border-bottom:1px solid var(--line);
   }
   .award:last-child{border-bottom:none;}
+
+  .guide-card-inner{
+    display:flex;
+    gap:1.6rem;
+    align-items:flex-start;
+  }
+  .guide-cover{
+    width:130px;
+    height:auto;
+    flex-shrink:0;
+    border-radius:2px;
+    box-shadow:0 6px 18px rgba(28,38,32,.18);
+  }
+  @media (max-width:600px){
+    .guide-card-inner{flex-direction:column;}
+    .guide-cover{width:150px;}
+  }
   .award .mark{
     font-family:'Fraunces', serif;
     color:var(--ochre);
@@ -503,7 +520,7 @@
         <a href="#overview">Overview</a>
         <a href="#focus">Research focus</a>
         <a href="#publications">Publications</a>
-        <a href="#Guide">Popular guide</a>
+        <a href="#guide">Popular guide</a>
         <a href="#projects">Projects &amp; funding</a>
         <a href="#teaching">Teaching</a>
         <a href="#education">Education</a>
@@ -559,7 +576,7 @@
           <div class="stat"><div class="num">13</div><div class="label">Scientific publications</div></div>
           <div class="stat"><div class="num">56</div><div class="label">Conference contributions</div></div>
           <div class="stat"><div class="num">6</div><div class="label">Fellowships &amp; mobility grants</div></div>
-          <div class="stat"><div class="num">9</div><div class="label">Months researching abroad, in Germany at BfR</div></div>
+          <div class="stat"><div class="num">9</div><div class="label">Months researching in Germany, at BfR</div></div>
           <div class="stat"><div class="num">6</div><div class="label">Years in active research, since 2020</div></div>
         </div>
       </section>
@@ -570,12 +587,12 @@
         <div class="focus-grid">
           <div>
             <p>
-              My doctoral thesis, supervised by Prof. Ana María Rivas Velasco and Prof. Alberto Zafra Gómez,
-              investigates the effect of exposure to endocrine-disrupting compounds on excess weight and
-              healthy neurodevelopment in children. The central hypothesis: dietary and biomonitored exposure to bisphenols and
-              parabens contributes to the development of childhood obesity and is associated with cognitive-behavioural alterations
-              characteristic of endocrine disruption, with the gut microbiota acting as a possible mediator of
-              the relationship between obesity and neurodevelopment.
+              My PhD thesis, directed by Prof. Ana María Rivas Velasco and Prof. Alberto Zafra Gómez,
+              examines the effect of endocrine-disrupting compound exposure on excess weight and healthy
+              neurodevelopment in children. The central hypothesis: dietary and biomonitored exposure to
+              bisphenols and parabens contributes to childhood obesity and is associated with the
+              cognitive-behavioural alterations typical of endocrine disruption, with gut microbiota acting
+              as a possible mediator of the link between obesity and neurodevelopment.
             </p>
             <p>
               In practice, this means recruiting cohorts of Spanish schoolchildren, measuring bisphenols and
@@ -587,10 +604,10 @@
           <div class="focus-aside">
             <h3>Core research threads</h3>
             <ul>
-              <li>Dietary and biomonitoring exposure assessment to bisphenols and parabens</li>
-              <li>Chemical exposure interactions in childhood overweight and obesity</li>
-              <li>Endocrine disrupting-chemicals as possible mediators of poorer cognitive-behavioural outcomes</li>
-              <li>Gut microbiota as a mediator of obesity–neurodevelopment links</li>
+              <li>Dietary &amp; biomonitoring exposure assessment to bisphenols and parabens</li>
+              <li>Chemical-exposure interactions in childhood overweight and obesity</li>
+              <li>Endocrine disruptors as possible mediators of poorer cognitive-behavioural outcomes</li>
+              <li>Gut microbiota linked to the obesity–neurodevelopment relationship</li>
             </ul>
           </div>
         </div>
@@ -681,21 +698,26 @@
           </div>
         </div>
 
-        <p class="pub-note">Bar length reflects each journal's impact factor in its year of publication (JIF, max. scale 10). Also author of a WHO-adjacent prevention guide on environmental obesogens (Ed.2002 - Ed.2025) and 56 conference contributions since 2021, including two award-winning posters.</p>
+        <p class="pub-note">Bar length reflects each journal's impact factor in its year of publication (JIF, max. scale 10). Also author of a prevention guide on environmental obesogens (2022 ed. – 2025 ed.) and 56 conference contributions since 2021, including two award-winning posters.</p>
       </section>
 
 <!-- POPULAR GUIDE -->
 <section id="guide">
   <div class="section-head"><h2>Popular science guide</h2></div>
   <div class="focus-aside" style="max-width:640px;">
-    <h3>Prevention guide on environmental obesogens</h3>
-    <p style="margin:0 0 1rem; font-size:.94rem; color:#333f38;">
-      A popular-science book, co-authored for families and paediatric professionals, explaining
-      how everyday obesogens — chemicals linked to weight gain — show up in food, packaging and
-      household products, with practical guidance for reducing exposure. Endorsed by the Spanish
-      and Andalusian Paediatric Primary Care Associations.
-    </p>
-    <a class="btn primary" href="environmental-obesogens-prevention-guide.pdf" target="_blank" rel="noopener">Read the guide (PDF)</a>
+    <div class="guide-card-inner">
+      <img src="guia-obesogenos-ambientales-portada.png" alt="Cover of the environmental obesogens prevention guide" class="guide-cover">
+      <div>
+        <h3>Prevention guide on environmental obesogens</h3>
+        <p style="margin:0 0 1rem; font-size:.94rem; color:#333f38;">
+          A popular-science book, co-authored for families and paediatric professionals, explaining
+          how everyday obesogens — chemicals linked to weight gain — show up in food, packaging and
+          household products, with practical guidance for reducing exposure. Endorsed by the Spanish
+          and Andalusian Paediatric Primary Care Associations.
+        </p>
+        <a class="btn primary" href="environmental-obesogens-prevention-guide.pdf" target="_blank" rel="noopener">Read the guide (PDF)</a>
+      </div>
+    </div>
   </div>
 </section>
       
