@@ -397,6 +397,23 @@
     border-bottom:1px solid var(--line);
   }
   .award:last-child{border-bottom:none;}
+
+  .guide-card-inner{
+    display:flex;
+    gap:1.6rem;
+    align-items:flex-start;
+  }
+  .guide-cover{
+    width:130px;
+    height:auto;
+    flex-shrink:0;
+    border-radius:2px;
+    box-shadow:0 6px 18px rgba(28,38,32,.18);
+  }
+  @media (max-width:600px){
+    .guide-card-inner{flex-direction:column;}
+    .guide-cover{width:150px;}
+  }
   .award .mark{
     font-family:'Fraunces', serif;
     color:var(--ochre);
@@ -689,15 +706,20 @@
 <section id="guide">
   <div class="section-head"><h2>Guía divulgativa</h2></div>
   <div class="focus-aside" style="max-width:640px;">
-    <h3>Guía de prevención de obesógenos ambientales</h3>
-    <p style="margin:0 0 1rem; font-size:.94rem; color:#333f38;">
-      Un libro de divulgación científica, coescrito para familias y profesionales de pediatría,
-      que explica cómo los obesógenos ambientales —compuestos químicos relacionados con el aumento
-      de peso— aparecen en alimentos, envases y productos del hogar, junto con pautas prácticas
-      para reducir la exposición. Avalado por la Asociación Española y Andaluza de Pediatría de
-      Atención Primaria.
-    </p>
-    <a class="btn primary" href="guia-obesogenos-ambientales.pdf" target="_blank" rel="noopener">Leer la guía (PDF)</a>
+    <div class="guide-card-inner">
+      <img src="guia-obesogenos-ambientales-portada.png" alt="Portada de la guía de prevención de obesógenos ambientales" class="guide-cover">
+      <div>
+        <h3>Guía de prevención de obesógenos ambientales</h3>
+        <p style="margin:0 0 1rem; font-size:.94rem; color:#333f38;">
+          Un libro de divulgación científica, coescrito para familias y profesionales de pediatría,
+          que explica cómo los obesógenos ambientales —compuestos químicos relacionados con el aumento
+          de peso— aparecen en alimentos, envases y productos del hogar, junto con pautas prácticas
+          para reducir la exposición. Avalado por la Asociación Española y Andaluza de Pediatría de
+          Atención Primaria.
+        </p>
+        <a class="btn primary" href="guia-obesogenos-ambientales.pdf" target="_blank" rel="noopener">Leer la guía (PDF)</a>
+      </div>
+    </div>
   </div>
 </section>
       
