@@ -446,8 +446,21 @@
   footer{
     padding:4.5rem 0 5rem;
   }
-  footer h2{font-size:2rem; max-width:16ch;}
-  footer p{max-width:52ch; color:var(--ink-soft); margin-top:1rem;}
+footer h2{font-size:2rem; max-width:22ch;}
+footer p{max-width:52ch; color:var(--ink-soft); margin-top:1rem;}
+.footer-flex{display:flex; gap:2.2rem; align-items:flex-start;}
+.footer-photo{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+  box-shadow:0 8px 22px rgba(28,38,32,.2);
+}
+@media (max-width:600px){
+  .footer-flex{flex-direction:column;}
+  .footer-photo{width:120px; height:120px;}
+}
   .cta-row{display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;}
   .btn{
     display:inline-block;
@@ -917,11 +930,15 @@
 
       <!-- FOOTER / CONTACT -->
       <footer id="contact">
-        <h2>Abierta a colaboraciones de investigación, revisión por pares e invitaciones a ponencias.</h2>
+        <h2>Abierta a colaboraciones de investigación — y en búsqueda activa de contratos postdoctorales.</h2>
         <p>
           Siempre es un placer conectar con otros investigadores que trabajen en disruptores endocrinos,
-          salud infantil o epidemiología nutricional, o hablar en más detalle sobre los proyectos
-          CogniObEx y NEUROBESS.
+          salud infantil o epidemiología nutricional, para poder explorar nuevas oportunidades de colaboración.
+
+          Actualmente estoy buscando activamente oportunidades posdoctorales y puestos relacionados con la investigación. 
+          Si estáis buscando incorporar a alguien a vuestro equipo, o conocéis alguna oportunidad que pueda encajar con mi 
+          perfil, estaré encantada de recibir noticias vuestras.
+          
         </p>
         <div class="cta-row">
           <a class="btn primary" href="mailto:pgonzapa11@gmail.com">Enviar un correo</a>
