@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patricia González Palacios — Portfolio de investigación</title>
+<meta name="description" content="Doctoranda en Nutrición y Ciencia de los Alimentos, Universidad de Granada — investigación sobre disruptores endocrinos, salud infantil y neurodesarrollo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2620;
+    --paper:#f6f4ed;
+    --paper-2:#efece2;
+    --petrol:#1f4a43;
+    --petrol-2:#173a34;
+    --petrol-tint:#e6ede9;
+    --ochre:#c1892e;
+    --ochre-tint:#f2e2c4;
+    --line:#d9d4c7;
+    --line-dark:#2c3a34;
+    --ink-soft:#4c574e;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+  }
+
+  a{color:inherit;}
+
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* ---------- layout shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns:290px 1fr;
+    min-height:100vh;
+  }
+
+  /* ---------- sidebar ---------- */
+  .sidebar{
+    position:sticky;
+    top:0;
+    height:100vh;
+    background:var(--petrol-2);
+    color:var(--paper);
+    padding:2.6rem 2rem 2rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow-y:auto;
+  }
+
+  .sidebar-top .kicker{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.04em;
+    color:#9fb8ae;
+    margin-bottom:1.1rem;
+  }
+
+  .sidebar-top h1{
+    font-size:1.7rem;
+    line-height:1.18;
+    color:#fbf9f2;
+  }
+
+  .sidebar-top .role{
+    margin-top:.6rem;
+    font-size:.92rem;
+    color:#c7d8d1;
+    max-width:22ch;
+  }
+
+  .lang-switch{
+    margin-top:1.2rem;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+  }
+  .lang-switch a{
+    text-decoration:none;
+    color:#83a297;
+  }
+  .lang-switch a.active{
+    color:var(--ochre);
+    font-weight:500;
+  }
+  .lang-switch a:hover{color:var(--ochre);}
+  .lang-switch span{color:#4f635b;}
+
+  .sidebar nav{
+    margin-top:2.4rem;
+    display:flex;
+    flex-direction:column;
+    gap:.15rem;
+  }
+
+  .sidebar nav a{
+    text-decoration:none;
+    color:#cfe0d9;
+    font-size:.93rem;
+    padding:.5rem .1rem;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    transition:color .15s ease, padding-left .15s ease;
+  }
+  .sidebar nav a:hover,
+  .sidebar nav a.active{
+    color:var(--ochre);
+    padding-left:.4rem;
+  }
+
+  .sidebar-bottom{
+    margin-top:2.4rem;
+    font-size:.85rem;
+  }
+
+  .sidebar-bottom .contact-row{
+    display:flex;
+    align-items:baseline;
+    gap:.5rem;
+    padding:.4rem 0;
+    border-top:1px solid rgba(255,255,255,.09);
+    color:#c7d8d1;
+  }
+  .sidebar-bottom .contact-row span.tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    color:#83a297;
+    min-width:4.4rem;
+  }
+  .sidebar-bottom a.contact-link{
+    color:#eef3ee;
+    text-decoration:none;
+    word-break:break-word;
+  }
+  .sidebar-bottom a.contact-link:hover{color:var(--ochre);}
+
+  /* ---------- main ---------- */
+  main{padding:0;}
+  .wrap{max-width:840px; margin:0 auto; padding:0 3rem;}
+
+  section{padding:5rem 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:1rem;
+    margin-bottom:2.2rem;
+  }
+  .section-head h2{font-size:1.9rem;}
+  .section-head .count{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.8rem;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:5.2rem;}
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    color:var(--ochre);
+    margin-bottom:1rem;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.1rem);
+    line-height:1.12;
+    max-width:16ch;
+  }
+  .hero p.lede{
+    margin-top:1.4rem;
+    max-width:62ch;
+    font-size:1.08rem;
+    color:#33403a;
+  }
+  .hero .loc{
+    margin-top:1.3rem;
+    font-size:.9rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- stat strip ---------- */
+  .stats{
+    margin-top:3rem;
+    display:flex;
+    flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .stat{
+    flex:1 1 150px;
+    padding:1.6rem 1.4rem 1.6rem 0;
+    border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{
+    font-family:'Fraunces', serif;
+    font-size:2.5rem;
+    color:var(--petrol);
+    line-height:1;
+  }
+  .stat .label{
+    margin-top:.5rem;
+    font-size:.83rem;
+    color:var(--ink-soft);
+    max-width:16ch;
+  }
+
+  /* ---------- research focus ---------- */
+  .focus-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:2.6rem;
+  }
+  .focus-grid p{margin:0 0 1rem; max-width:58ch;}
+  .focus-aside{
+    background:var(--petrol-tint);
+    border-left:3px solid var(--petrol);
+    padding:1.3rem 1.5rem;
+    font-size:.92rem;
+    align-self:start;
+  }
+  .focus-aside h3{font-size:1rem; margin-bottom:.6rem; font-family:'IBM Plex Sans', sans-serif; font-weight:600;}
+  .focus-aside ul{margin:0; padding-left:1.1rem;}
+  .focus-aside li{margin-bottom:.4rem;}
+
+  /* ---------- publications ---------- */
+  .pub{
+    display:grid;
+    grid-template-columns:4.4rem 1fr 6.5rem;
+    gap:1.3rem;
+    align-items:start;
+    padding:1.15rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .pub:last-child{border-bottom:none;}
+  .pub .year{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.85rem;
+    color:var(--ink-soft);
+    padding-top:.2rem;
+  }
+  .pub .journal{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1rem;
+    color:var(--petrol);
+    margin-bottom:.25rem;
+  }
+  .pub .finding{font-size:.94rem; color:#333f38;}
+  .pub .role-tag{
+    display:inline-block;
+    margin-top:.4rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    color:var(--ochre);
+    background:var(--ochre-tint);
+    padding:.15rem .5rem;
+    border-radius:2px;
+  }
+  .pub .if-bar-wrap{padding-top:.35rem;}
+  .pub .if-value{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.8rem;
+    color:var(--ink);
+    margin-bottom:.3rem;
+    text-align:right;
+  }
+  .if-track{
+    height:6px;
+    background:var(--paper-2);
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .if-fill{
+    height:100%;
+    background:var(--petrol);
+    border-radius:3px;
+  }
+  .pub-note{
+    margin-top:1.6rem;
+    font-size:.85rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- projects ---------- */
+  .project{
+    padding:1.4rem 0;
+    border-bottom:1px solid var(--line);
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:.6rem 1.5rem;
+  }
+  .project:last-child{border-bottom:none;}
+  .project h3{font-size:1.08rem; font-family:'IBM Plex Sans',sans-serif; font-weight:600;}
+  .project .meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.76rem;
+    color:var(--ink-soft);
+    text-align:right;
+    white-space:nowrap;
+    padding-top:.15rem;
+  }
+  .project p{grid-column:1/-1; margin:.3rem 0 0; font-size:.93rem; color:#333f38; max-width:62ch;}
+  .project .pi-flag{
+    grid-column:1/-1;
+    display:inline-block;
+    width:fit-content;
+    margin-top:.5rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.68rem;
+    color:var(--petrol);
+    background:var(--petrol-tint);
+    padding:.15rem .5rem;
+    border-radius:2px;
+  }
+
+  /* ---------- teaching ---------- */
+  table.teach{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.92rem;
+  }
+  table.teach th{
+    text-align:left;
+    font-weight:600;
+    font-size:.75rem;
+    color:var(--ink-soft);
+    padding-bottom:.6rem;
+    border-bottom:1px solid var(--line);
+  }
+  table.teach td{
+    padding:.85rem 1rem .85rem 0;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.teach td.deg{color:var(--ink-soft); font-size:.88rem;}
+  table.teach td.yr{font-family:'IBM Plex Mono', monospace; font-size:.82rem; white-space:nowrap;}
+
+  /* ---------- education timeline ---------- */
+  .timeline{position:relative; padding-left:1.8rem;}
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:5px; top:6px; bottom:6px;
+    width:1px;
+    background:var(--line);
+  }
+  .tl-item{position:relative; padding-bottom:2rem;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-1.8rem; top:.35rem;
+    width:11px; height:11px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--petrol);
+  }
+  .tl-item.current::before{background:var(--ochre); border-color:var(--ochre);}
+  .tl-item .tl-year{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.78rem;
+    color:var(--ink-soft);
+  }
+  .tl-item h3{font-size:1.08rem; margin-top:.2rem;}
+  .tl-item .tl-sub{font-size:.88rem; color:var(--ink-soft); margin-top:.2rem;}
+  .tl-item .tl-note{font-size:.88rem; margin-top:.45rem; max-width:56ch; color:#333f38;}
+
+  /* ---------- awards ---------- */
+  .award{
+    display:flex;
+    gap:1rem;
+    padding:1rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .award:last-child{border-bottom:none;}
+  .award .mark{
+    font-family:'Fraunces', serif;
+    color:var(--ochre);
+    font-size:1.6rem;
+    line-height:1;
+    padding-top:.15rem;
+  }
+  .award h3{font-size:1rem; font-family:'IBM Plex Sans',sans-serif; font-weight:600;}
+  .award p{margin:.2rem 0 0; font-size:.88rem; color:var(--ink-soft);}
+
+  /* ---------- languages & tools ---------- */
+  .lang-tools{display:grid; grid-template-columns:1fr 1fr; gap:3rem;}
+  .lang-row{margin-bottom:1.1rem;}
+  .lang-row .lang-head{display:flex; justify-content:space-between; font-size:.9rem; margin-bottom:.35rem;}
+  .lang-row .lang-head span.level{font-family:'IBM Plex Mono', monospace; color:var(--petrol);}
+  .cefr-track{display:flex; gap:3px;}
+  .cefr-seg{flex:1; height:7px; background:var(--paper-2); border-radius:2px;}
+  .cefr-seg.filled{background:var(--petrol);}
+
+  .tools-list{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.5rem;}
+  .tools-list li{
+    font-size:.82rem;
+    padding:.35rem .7rem;
+    background:var(--petrol-tint);
+    color:var(--petrol);
+    border-radius:2px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  /* ---------- footer / contact ---------- */
+  footer{
+    padding:4.5rem 0 5rem;
+  }
+  footer h2{font-size:2rem; max-width:16ch;}
+  footer p{max-width:52ch; color:var(--ink-soft); margin-top:1rem;}
+  .cta-row{display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;}
+  .btn{
+    display:inline-block;
+    padding:.85rem 1.5rem;
+    text-decoration:none;
+    font-size:.92rem;
+    border-radius:2px;
+  }
+  .btn.primary{background:var(--petrol); color:var(--paper);}
+  .btn.primary:hover{background:var(--petrol-2);}
+  .btn.ghost{border:1px solid var(--ink); color:var(--ink);}
+  .btn.ghost:hover{background:var(--ink); color:var(--paper);}
+  footer .fine{margin-top:3rem; font-size:.78rem; color:#7a8580; font-family:'IBM Plex Mono', monospace;}
+
+  /* ---------- mobile ---------- */
+  .menu-toggle{display:none;}
+
+  @media (max-width:920px){
+    .shell{display:block;}
+    .sidebar{
+      position:relative;
+      height:auto;
+      padding:1.6rem 1.4rem;
+    }
+    .sidebar-top h1{font-size:1.4rem;}
+    .sidebar nav{
+      margin-top:1.4rem;
+      flex-direction:row;
+      flex-wrap:wrap;
+      gap:.4rem 1rem;
+    }
+    .sidebar nav a{border-bottom:none; padding:.15rem 0;}
+    .sidebar-bottom{margin-top:1.6rem;}
+    .wrap{padding:0 1.4rem;}
+    section{padding:3rem 0;}
+    .hero{padding-top:2.6rem;}
+    .focus-grid{grid-template-columns:1fr;}
+    .lang-tools{grid-template-columns:1fr; gap:2rem;}
+    .pub{grid-template-columns:1fr; gap:.5rem;}
+    .pub .if-bar-wrap{max-width:12rem;}
+    .project{grid-template-columns:1fr;}
+    .project .meta{text-align:left;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="kicker">Portfolio de investigación</div>
+      <h1>Patricia<br>González Palacios</h1>
+      <p class="role">Doctoranda en Nutrición y Ciencia de los Alimentos<br>Universidad de Granada</p>
+
+      <div class="lang-switch">
+        <a href="index.html">EN</a>
+        <span>·</span>
+        <a href="index-es.html" class="active">ES</a>
+      </div>
+
+      <nav id="side-nav">
+        <a href="#overview">Resumen</a>
+        <a href="#focus">Enfoque de investigación</a>
+        <a href="#publications">Publicaciones</a>
+        <a href="#projects">Proyectos y financiación</a>
+        <a href="#teaching">Docencia</a>
+        <a href="#education">Formación</a>
+        <a href="#recognition">Reconocimientos</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="contact-row">
+        <span class="tag">Correo</span>
+        <a class="contact-link" href="mailto:pgonzapa11@gmail.com">pgonzapa11@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="tag">LinkedIn</span>
+        <a class="contact-link" href="https://www.linkedin.com/in/patricia-gonzalez-palacios/" target="_blank" rel="noopener">/patricia-gonzalez-palacios</a>
+      </div>
+      <div class="contact-row">
+        <span class="tag">ORCID</span>
+        <a class="contact-link" href="https://orcid.org/0000-0002-5716-6058" target="_blank" rel="noopener">0000-0002-5716-6058</a>
+      </div>
+      <div class="contact-row">
+        <span class="tag">Scholar</span>
+        <a class="contact-link" href="https://scholar.google.com/citations?hl=it&user=qwvB2gkAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      </div>
+      <div class="contact-row">
+        <span class="tag">Ubicación</span>
+        <span>Granada, España</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="wrap">
+
+      <!-- HERO / OVERVIEW -->
+      <section id="overview" class="hero">
+        <div class="eyebrow">Investigadora predoctoral FPU · Facultad de Farmacia</div>
+        <h1>Estudio cómo las exposiciones químicas cotidianas influyen en el crecimiento y desarrollo infantil.</h1>
+        <p class="lede">
+          Soy investigadora predoctoral en el departamento de Nutrición y Ciencia de los Alimentos de la
+          Universidad de Granada. Investigo cómo los disruptores endocrinos, como bisfenoles y parabenos
+          —presentes en envases alimentarios y productos de uso cotidiano—, interactúan con la genética y
+          la microbiota intestinal para influir en la obesidad infantil y el neurodesarrollo. Mi trabajo combina
+          biomonitorización, modelización de la exposición dietética y pruebas cognitivo-conductuales en
+          población escolar española.
+        </p>
+        <p class="loc">Actualmente en una estancia de investigación en el Instituto Federal Alemán de Evaluación de Riesgos (BfR), Berlín</p>
+
+        <div class="stats">
+          <div class="stat"><div class="num">13</div><div class="label">Publicaciones científicas</div></div>
+          <div class="stat"><div class="num">56</div><div class="label">Contribuciones a congresos</div></div>
+          <div class="stat"><div class="num">6</div><div class="label">Becas y ayudas de movilidad</div></div>
+          <div class="stat"><div class="num">9</div><div class="label">Meses investigando en Alemania, en el BfR</div></div>
+          <div class="stat"><div class="num">6</div><div class="label">Años en investigación activa, desde 2020</div></div>
+        </div>
+      </section>
+
+      <!-- RESEARCH FOCUS -->
+      <section id="focus">
+        <div class="section-head"><h2>Enfoque de investigación</h2></div>
+        <div class="focus-grid">
+          <div>
+            <p>
+              Mi tesis doctoral, dirigida por la Prof. Ana María Rivas Velasco y el Prof. Alberto Zafra Gómez,
+              estudia el efecto de la exposición a compuestos disruptores endocrinos sobre el neurodesarrollo
+              infantil. La hipótesis central: la variabilidad genética y los cambios en la microbiota intestinal
+              podrían explicar por qué la exposición a los mismos compuestos afecta más a la salud cognitiva y
+              metabólica de unos niños que de otros.
+            </p>
+            <p>
+              En la práctica, esto implica reclutar cohortes de escolares españoles, medir bisfenoles y
+              parabenos en muestras de orina, cabello y uñas mediante UHPLC-MS/MS, y combinar esas mediciones
+              con cuestionarios dietéticos validados (recordatorios de 24h, FFQ), paneles de genotipado e
+              instrumentos cognitivo-conductuales estandarizados (WISC-V, BASC-3).
+            </p>
+          </div>
+          <div class="focus-aside">
+            <h3>Líneas de investigación principales</h3>
+            <ul>
+              <li>Evaluación de la exposición dietética y por biomonitorización a bisfenoles y parabenos</li>
+              <li>Interacciones gen × exposición química en la obesidad infantil</li>
+              <li>Disruptores endocrinos y resultados cognitivo-conductuales</li>
+              <li>La microbiota intestinal como mediadora del vínculo obesidad-neurodesarrollo</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications">
+        <div class="section-head">
+          <h2>Publicaciones seleccionadas</h2>
+          <div class="count">6 de 13 · lista completa a petición</div>
+        </div>
+
+        <div class="pub">
+          <div class="year mono">2025</div>
+          <div>
+            <div class="journal">Food Chemistry</div>
+            <div class="finding">Revisión global que mapea las concentraciones de parabenos en 14 categorías de alimentos, identificando los lácteos y las verduras como principales fuentes dietéticas en la UE.</div>
+            <span class="role-tag">1ª autora · autora de correspondencia</span>
+          </div>
+          <div class="if-bar-wrap">
+            <div class="if-value">IF 9.8</div>
+            <div class="if-track"><div class="if-fill" style="width:98%"></div></div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year mono">2022</div>
+          <div>
+            <div class="journal">Science of The Total Environment</div>
+            <div class="finding">Propuso un marco que vincula disruptores endocrinos, genética y microbiota intestinal como factores conjuntos e interactuantes de la obesidad infantil y los trastornos del neurodesarrollo.</div>
+            <span class="role-tag">2ª autora · autora de correspondencia</span>
+          </div>
+          <div class="if-bar-wrap">
+            <div class="if-value">IF 9.8</div>
+            <div class="if-track"><div class="if-fill" style="width:98%"></div></div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year mono">2025</div>
+          <div>
+            <div class="journal">Science of The Total Environment</div>
+            <div class="finding">Encontró que los niños con mayor exposición a parabenos a largo plazo, medida en muestras de cabello, obtuvieron puntuaciones cognitivas más bajas y mostraron más dificultades de comportamiento.</div>
+            <span class="role-tag">1ª autora · autora de correspondencia</span>
+          </div>
+          <div class="if-bar-wrap">
+            <div class="if-value">IF 8.0</div>
+            <div class="if-track"><div class="if-fill" style="width:80%"></div></div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year mono">2025</div>
+          <div>
+            <div class="journal">Neuroscience &amp; Biobehavioral Reviews</div>
+            <div class="finding">Revisión sistemática y metaanálisis de 13 estudios sobre el bisfenol A y el comportamiento infantil, con evidencia inconsistente que resalta la necesidad de diseños de estudio estandarizados.</div>
+            <span class="role-tag">1ª autora · autora de correspondencia</span>
+          </div>
+          <div class="if-bar-wrap">
+            <div class="if-value">IF 7.9</div>
+            <div class="if-track"><div class="if-fill" style="width:79%"></div></div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year mono">2026</div>
+          <div>
+            <div class="journal">Environmental Pollution</div>
+            <div class="finding">Comparó tres métodos para estimar la exposición dietética infantil a bisfenoles y parabenos, mostrando dónde la biomonitorización en orina puede subestimar la ingesta real.</div>
+            <span class="role-tag">1ª autora · autora de correspondencia</span>
+          </div>
+          <div class="if-bar-wrap">
+            <div class="if-value">IF 7.2</div>
+            <div class="if-track"><div class="if-fill" style="width:72%"></div></div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="year mono">2024</div>
+          <div>
+            <div class="journal">Ecotoxicology and Environmental Safety</div>
+            <div class="finding">Identificó variantes genéticas —incluidas LEPR y ESR2— que interactúan con la exposición a bisfenoles y parabenos, aumentando el riesgo de exceso de peso en niños españoles.</div>
+            <span class="role-tag">4ª autora</span>
+          </div>
+          <div class="if-bar-wrap">
+            <div class="if-value">IF 6.2</div>
+            <div class="if-track"><div class="if-fill" style="width:62%"></div></div>
+          </div>
+        </div>
+
+        <p class="pub-note">La longitud de la barra refleja el factor de impacto de cada revista en su año de publicación (JIF, escala máx. 10). También autora de una guía de prevención de obesógenos ambientales (2022) y de 56 contribuciones a congresos desde 2021, incluyendo dos pósteres premiados.</p>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="section-head"><h2>Proyectos y financiación</h2></div>
+
+        <div class="project">
+          <h3>Aceite de girasol, ácido oleico y neurodesarrollo</h3>
+          <div class="meta">2024–2025 · 1.250 € · PPJIB-2024-04</div>
+          <p>Estudia si la ingesta dietética de ácido oleico protege frente a los trastornos del neurodesarrollo en niños de 3 a 12 años, combinando encuestas de frecuencia alimentaria con evaluaciones cognitivo-conductuales validadas.</p>
+          <span class="pi-flag">Investigadora principal</span>
+        </div>
+
+        <div class="project">
+          <h3>NEUROBESS — Disruptores endocrinos, obesidad y neurodesarrollo</h3>
+          <div class="meta">2023–2026 · 77.500 € · Instituto de Salud Carlos III</div>
+          <p>Proyecto nacional que examina cómo los disruptores endocrinos interactúan con la variabilidad genética y la microbiota intestinal para moldear conjuntamente la obesidad y el neurodesarrollo infantil.</p>
+        </div>
+
+        <div class="project">
+          <h3>CogniObEx</h3>
+          <div class="meta">2026–2027 · 2.000 € · Universidad de Granada</div>
+          <p>Estudia cómo el exceso de peso infantil y la exposición a disruptores endocrinos afectan conjuntamente al desarrollo cognitivo, mediados por factores genéticos y de la microbiota.</p>
+        </div>
+
+        <div class="project">
+          <h3>PIIISA — acercando la ciencia de los alimentos a los institutos</h3>
+          <div class="meta">2023–2026 · Programa de divulgación de la Universidad de Granada</div>
+          <p>Co-diseñó un proyecto práctico de elaboración de yogur —desde la leche cruda hasta la evaluación sensorial y el etiquetado nutricional— para acercar el método científico a estudiantes de secundaria.</p>
+        </div>
+      </section>
+
+      <!-- TEACHING -->
+      <section id="teaching">
+        <div class="section-head"><h2>Docencia</h2></div>
+        <table class="teach">
+          <thead>
+            <tr><th>Asignatura</th><th>Titulación</th><th>Años</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nutrición y Ciencia de los Alimentos <span class="deg">(prácticas)</span></td>
+              <td class="deg">Grado en Farmacia</td>
+              <td class="yr">2023 · 25 · 26</td>
+            </tr>
+            <tr>
+              <td>Alimentación y Cultura <span class="deg">(teoría y prácticas)</span></td>
+              <td class="deg">Grado en Nutrición Humana y Dietética</td>
+              <td class="yr">2024</td>
+            </tr>
+            <tr>
+              <td>Higiene y Seguridad Alimentaria <span class="deg">(teoría)</span></td>
+              <td class="deg">Grado en Nutrición Humana y Dietética</td>
+              <td class="yr">2023–24</td>
+            </tr>
+            <tr>
+              <td>Ciencia de los Alimentos <span class="deg">(prácticas)</span></td>
+              <td class="deg">Grado en Ciencia y Tecnología de los Alimentos</td>
+              <td class="yr">2023</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="pub-note">También ha co-dirigido o tutorizado 8 Trabajos de Fin de Grado (2024–2026), con una nota media de 9,6/10, sobre temas que van desde la exposición a bisfenoles hasta herramientas de valoración dietética.</p>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <div class="section-head"><h2>Formación</h2></div>
+        <div class="timeline">
+
+          <div class="tl-item current">
+            <div class="tl-year">2022 — en curso</div>
+            <h3>Doctorado en Nutrición y Ciencia de los Alimentos</h3>
+            <div class="tl-sub">Universidad de Granada</div>
+            <div class="tl-note">Tesis: "Efecto de la exposición a compuestos disruptores endocrinos sobre el neurodesarrollo", dirigida por la Prof. Ana María Rivas Velasco.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-year">2022</div>
+            <h3>Máster en Avances en Calidad y Tecnología de los Alimentos</h3>
+            <div class="tl-sub">Universidad de Granada — Sobresaliente</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-year">2021</div>
+            <h3>Máster en Biotecnología de los Alimentos</h3>
+            <div class="tl-sub">Pontificia Universidad Católica Argentina — Notable</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-year">2021</div>
+            <h3>Grado en Nutrición Humana y Dietética</h3>
+            <div class="tl-sub">Universidad de Granada — Sobresaliente, premio fin de grado</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-year">2016</div>
+            <h3>Técnico Superior en Dietética</h3>
+            <div class="tl-sub">Roger de Llúria, Barcelona</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- RECOGNITION -->
+      <section id="recognition">
+        <div class="section-head"><h2>Reconocimientos</h2></div>
+
+        <div class="award">
+          <div class="mark">•</div>
+          <div>
+            <h3>Premio Abbott al Mejor Trabajo Fin de Grado</h3>
+            <p>Facultad de Farmacia, Universidad de Granada — 2021</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="mark">•</div>
+          <div>
+            <h3>Mejor expediente académico de la promoción</h3>
+            <p>Grado en Nutrición Humana y Dietética, Universidad de Granada — 2021</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="mark">•</div>
+          <div>
+            <h3>Premio a la Excelencia en Movilidad Internacional</h3>
+            <p>Mejor expediente académico durante la estancia Erasmus+, Nápoles — 2020</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="mark">•</div>
+          <div>
+            <h3>Mejor póster, 66º Congreso AEPNYA</h3>
+            <p>Asociación Española de Psiquiatría del Niño y el Adolescente — 2023</p>
+          </div>
+        </div>
+        <div class="award">
+          <div class="mark">•</div>
+          <div>
+            <h3>Mejor comunicación, XXV Jornadas Internacionales de Nutrición Práctica</h3>
+            <p>Sociedad Española de Dietética y Ciencias de la Alimentación — 2021</p>
+          </div>
+        </div>
+
+        <div class="lang-tools" style="margin-top:3rem;">
+          <div>
+            <h3 style="font-size:1.1rem; margin-bottom:1.2rem; font-family:'IBM Plex Sans',sans-serif; font-weight:600;">Idiomas</h3>
+
+            <div class="lang-row">
+              <div class="lang-head"><span>Español</span><span class="level">C2</span></div>
+              <div class="cefr-track">
+                <div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div>
+              </div>
+            </div>
+            <div class="lang-row">
+              <div class="lang-head"><span>Catalán</span><span class="level">C2</span></div>
+              <div class="cefr-track">
+                <div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div>
+              </div>
+            </div>
+            <div class="lang-row">
+              <div class="lang-head"><span>Italiano</span><span class="level">C1</span></div>
+              <div class="cefr-track">
+                <div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg"></div><div class="cefr-seg"></div>
+              </div>
+            </div>
+            <div class="lang-row">
+              <div class="lang-head"><span>Inglés</span><span class="level">C1</span></div>
+              <div class="cefr-track">
+                <div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg filled"></div><div class="cefr-seg"></div><div class="cefr-seg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size:1.1rem; margin-bottom:1.2rem; font-family:'IBM Plex Sans',sans-serif; font-weight:600;">Herramientas y métodos</h3>
+            <ul class="tools-list">
+              <li>UHPLC-MS/MS</li>
+              <li>IBM SPSS</li>
+              <li>GraphPad</li>
+              <li>Excel / VBA</li>
+              <li>Evaluación dietética R24h y FFQ</li>
+              <li>WISC-V</li>
+              <li>BASC-3</li>
+              <li>Web of Science / Scopus</li>
+              <li>Revisión sistemática (PRISMA)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER / CONTACT -->
+      <footer id="contact">
+        <h2>Abierta a colaboraciones de investigación, revisión por pares e invitaciones a ponencias.</h2>
+        <p>
+          Siempre es un placer conectar con otros investigadores que trabajen en disruptores endocrinos,
+          salud infantil o epidemiología nutricional, o hablar en más detalle sobre los proyectos
+          CogniObEx y NEUROBESS.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:pgonzapa11@gmail.com">Enviar un correo</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/patricia-gonzalez-palacios/" target="_blank" rel="noopener">Conectar en LinkedIn</a>
+          <a class="btn ghost" href="https://scholar.google.com/citations?hl=it&user=qwvB2gkAAAAJ" target="_blank" rel="noopener">Ver Google Scholar</a>
+        </div>
+        <div class="fine">Granada, España · Universidad de Granada, Facultad de Farmacia · ORCID 0000-0002-5716-6058</div>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  // active nav highlight on scroll
+  const sections = document.querySelectorAll('main section, footer');
+  const links = document.querySelectorAll('#side-nav a');
+  const setActive = () => {
+    let currentId = sections[0].id;
+    const scrollPos = window.scrollY + 140;
+    sections.forEach(sec => {
+      if (sec.offsetTop <= scrollPos) currentId = sec.id;
+    });
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+    });
+  };
+  document.addEventListener('scroll', setActive, { passive: true });
+  window.addEventListener('load', setActive);
+</script>
+
+</body>
+</html>
